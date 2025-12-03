@@ -1,0 +1,474 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    background: #5e4a0a; /* verde capoeira */
+    padding: 18px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.navbar .logo img {
+    width: 70px;
+}
+
+/* Ícone do menu (aparece somente no celular) */
+.menu-icon {
+    display: none;
+    font-size: 34px;
+    color: white;
+    cursor: pointer;
+}
+
+/* LINKS DESKTOP */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 768px) {
+
+    /* Ícone aparece */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Esconde os links */
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #0a5e2a;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 20px 0;
+    }
+
+    /* Links maiores no celular */
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+}
+
+
+/* SEÇÃO PRINCIPAL */
+.main-content {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.cap-img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #0003;
+}
+
+.texto {
+    flex: 1;
+    min-width: 250px;
+}
+
+.texto h1 {
+    color: #0033A0;
+    margin-bottom: 15px;
+}
+
+/* CARD PRINCIPAL */
+.card-principal {
+    width: 90%;
+    margin: 40px auto;
+    background: #D69A2D;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #0004;
+    text-align: center;
+}
+
+/* CARDS */
+.cards-container {
+    width: 100%;
+    padding: 30px;
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 10px #0003;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.card h3 {
+    background: #805700;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+/* ---------------- MEDIA QUERIES ---------------- */
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        right: -100%;
+        background: #0033A0;
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        transition: 0.3s;
+        border-radius: 10px;
+    }
+
+    .nav-links.open {
+        right: 20px;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .main-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .texto h1 {
+        font-size: 24px;
+    }
+}
+/* PÁGINA DE GRADUAÇÃO */
+.graduacao-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.graduacao-container h1 {
+    color: #0033A0;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.graduacao-img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 0 12px #0005;
+    margin-bottom: 20px;
+}
+
+.descricao-graduacao {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* BOTÃO VOLTAR */
+.btn-voltar {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #805700;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover {
+    background: #5d3c00;
+    transform: scale(1.05);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .graduacao-container h1 {
+        font-size: 26px;
+    }
+
+    .descricao-graduacao {
+        font-size: 16px;
+    }
+}
+/* INTRO EM TELA CHEIA */
+#intro {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* AQUI faz ocupar a tela toda */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fundo amarelo atravessando */
+#intro .intro-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #D9C2A6; /* amarelo capoeira */
+    animation: slideIntro 2s forwards;
+    z-index: 1;
+}
+
+@keyframes slideIntro {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+/* Foto do mestre */
+.intro-img {
+    position: absolute;
+    opacity: 0;
+    width: 350px;
+    max-width: 90%;
+    border-radius: 20px;
+    animation: aparecer 3s forwards 2s;
+    z-index: 2;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* PÁGINA DE HISTÓRIA */
+/* PÁGINA DE HISTÓRIA */
+.historia-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Pergaminho Base */
+.pergaminho {
+    background: url('IMG/pergaminho.png') center/cover no-repeat;
+    padding: 60px 40px;
+    max-width: 900px;
+    width: 100%;
+    min-height: 600px;
+    color: #3b2b17;
+    font-family: "Georgia", serif;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    position: relative;
+    animation: aparecerPergaminho 2s ease forwards;
+}
+
+/* ANIMAÇÃO DE APARECER */
+@keyframes aparecerPergaminho {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* BORDAS QUEIMADAS ANIMADAS */
+.efeito-pergaminho::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    pointer-events: none;
+    background-image: url("IMG/fogo.gif");
+    opacity: 0.25;
+    mix-blend-mode: multiply;
+}
+
+/* TEXTO */
+.pergaminho h1 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+}
+
+.pergaminho p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* BOTÃO VOLTAR */
+.btn-voltar {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    padding: 12px 20px;
+    background: #d4a017;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover {
+    background: #b8860b;
+}
+
+/* TEXTO SENDO "ESCRITO" */
+.texto-escrevendo {
+    overflow: hidden;
+    white-space: wrap;
+    animation: escrever 4s steps(200) forwards;
+}
+
+@keyframes escrever {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    .pergaminho {
+        padding: 40px 20px;
+        background-size: contain;
+    }
+
+    .pergaminho h1 {
+        font-size: 1.9rem;
+    }
+
+    .pergaminho p {
+        font-size: 1rem;
+    }
+}
+/* SEÇÃO INFORMAÇÕES DAS AULAS */
+.info-aulas {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.titulo-secao {
+    text-align: center;
+    font-size: 2.3rem;
+    margin-bottom: 30px;
+    color: #642500;
+    font-weight: bold;
+}
+
+.info-box {
+    background: #f6f6f6;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-left: 6px solid #daa520; /* dourado capoeira */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.info-box h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .titulo-secao {
+        font-size: 1.9rem;
+    }
+
+    .info-box h3 {
+        font-size: 1.3rem;
+    }
+
+    .info-box p {
+        font-size: 1rem;
+    }
+}
+@font-face {
+    font-family: 'FestivalFont';
+    src: url('fonts/suafonte.ttf') format('truetype');
+}
+
+h1, h2, h3, .titulo {
+    font-family: 'FestivalFont', sans-serif;
+}
+/* Setas laterais */
+.seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+    z-index: 20;
+}
+
+.seta-esq { left: 20px; }
+.seta-dir { right: 20px; }
+
+.seta:hover {
+    color: #ffdd00;
+}
+.intro-img {
+    width: 65%;       /* AUMENTE AQUI – pode usar 70%, 80%, 90% etc */
+    max-width: 600px; /* tamanho máximo para telas grandes */
+    height: auto;     /* mantém proporção correta */
+    position: relative;
+    z-index: 10;
+    border-radius: 15px;
+    transition: opacity 1.5s ease, transform 0.5s ease;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo de Capoeira</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+        <img src="/IMG/logo.png" alt="Logo do Grupo">
+    </div>
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="graduacao.html">Sistema de Graduação</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="contato.html">Contato</a></li>
+    </ul>
+</nav>
+
+
+<!-- INTRO COM ANIMAÇÃO -->
+<div id="intro">
+    <div class="intro-bg"></div>
+
+    <!-- AQUI ENTRA A PRIMEIRA ANIMAÇÃO -->
+    <img id="introFoto" src="/IMG/gilson.jpg" class="intro-img fade-in" alt="Mestre">
+
+    <!-- SETAS PARA TROCAR AS IMAGENS -->
+    <div class="seta seta-esq" onclick="trocarIntro(-1)">&#10094;</div>
+    <div class="seta seta-dir" onclick="trocarIntro(1)">&#10095;</div>
+</div>
+
+
+    <!-- SEÇÃO PRINCIPAL -->
+    <section class="main-content">
+        <img src="/IMG/img1.jpg" class="cap-img" alt="Capoeira imagem">
+
+        <div class="texto">
+            <h1 class="titulo">Grupo de Capoeira Brasilidade</h1>
+
+            <p>
+                A Capoeira é uma expressão cultural que mistura arte marcial, música e dança.
+            </p>
+            <p>
+                Venha fazer parte dessa família e aprender muito mais sobre a filosofia da Capoeira!
+            </p>
+        </div>
+    </section>
+
+
+    <section class="card-principal">
+        <h2>Bem-vindo ao Nosso Grupo</h2>
+        <p>Conheça nossas aulas, eventos e tradição.</p>
+    </section>
+
+
+    <section class="cards-container">
+        <div class="card">
+            <img src="img1.jpg" alt="">
+            <h3>Gilson</h3>
+        </div>
+        <div class="card">
+            <img src="img2.jpg" alt="">
+            <h3>Alemão</h3>
+        </div>
+        <div class="card">
+            <img src="img3.jpg" alt="">
+            <h3>Matraca</h3>
+        </div>
+        <div class="card">
+            <img src="img4.jpg" alt="">
+            <h3>Faisca</h3>
+        </div>
+        <div class="card">
+            <img src="img5.jpg" alt="">
+            <h3>pixain</h3>
+        </div>
+    </section>
+<!-- SEÇÃO SOBRE AS AULAS -->
+<section class="info-aulas">
+
+    <h2 class="titulo-secao">Informações Sobre as Aulas</h2>
+
+    <div class="info-box">
+        <h3>📍 Local das Aulas</h3>
+        <p>
+           Terça-feira: <br>
+           Praça Frederico Fellini - Av. José Rossi, s/nº - Parque Centenário, Jundiaí - SP, 13214-754<br>
+           Quinta-feira<br>
+           R. Benedicto de Paula, n° 93 - Parque dos Ingas, Jundiaí - SP, 13214-747
+        
+        </p>
+    </div>
+
+    <div class="info-box">
+        <h3>🕒 Horários</h3>
+        <p>
+        treinos das 20:00 as 22:00
+
+        </p>
+    </div>
+
+    <div class="info-box">
+        <h3>👦👧 Público / Idade</h3>
+        <p>
+           Tanto crianças como adultos pode se juntar ao nosso treino 
+
+        </p>
+    </div>
+
+    <div class="info-box">
+        <h3>🎯 Objetivos das Aulas</h3>
+        <p>
+            Aqui você pode falar sobre condicionamento físico, defesa, musicalidade,
+            cultura, roda, etc.
+        </p>
+    </div>
+
+</section>
+
+    <script src="script.js"></script>
+</body>
+</html>
